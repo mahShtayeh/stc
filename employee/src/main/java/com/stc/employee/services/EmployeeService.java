@@ -5,14 +5,32 @@ import com.stc.employee.repositeries.EmployeeRepository;
 import com.stc.employee.requests.EmployeeRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public record EmployeeService(EmployeeRepository employeeRepository) {
-    public void createEmployee(EmployeeRequest employeeRequest) {
+    public void create(EmployeeRequest employeeRequest) {
         Employee employee = Employee.builder()
                 .name(employeeRequest.name())
                 .email(employeeRequest.email())
                 .phone(employeeRequest.phone())
                 .build();
         employeeRepository.save(employee);
+    }
+
+    public List<Employee> listAll() {
+        return employeeRepository.findAll();
+    }
+
+    public void update(String id, EmployeeRequest employeeRequest) {
+        Employee employee = employeeRepository.getById(id);
+        employee.setName(employeeRequest.name());
+        employee.setEmail(employeeRequest.email());
+        employee.setPhone(employeeRequest.phone());
+        employeeRepository.save(employee);
+    }
+
+    public void delete(String id) {
+        employeeRepository.deleteById(id);
     }
 }
