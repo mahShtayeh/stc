@@ -3,6 +3,7 @@ package com.stc.employee.controllers;
 import com.stc.employee.entities.Employee;
 import com.stc.employee.requests.EmployeeRequest;
 import com.stc.employee.services.EmployeeService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +12,10 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("employee")
-public record EmployeeController(EmployeeService employeeService) {
+@AllArgsConstructor
+public class EmployeeController {
+    private final EmployeeService employeeService;
+
     @PostMapping
     public void create(@RequestBody EmployeeRequest employeeRequest) {
         employeeService.create(employeeRequest);

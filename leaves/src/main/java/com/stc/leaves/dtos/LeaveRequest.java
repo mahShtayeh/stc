@@ -1,4 +1,4 @@
-package com.stc.leaves.requests;
+package com.stc.leaves.dtos;
 
 public record LeaveRequest(
         String employeeId,

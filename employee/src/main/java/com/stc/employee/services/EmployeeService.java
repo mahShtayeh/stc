@@ -3,12 +3,16 @@ package com.stc.employee.services;
 import com.stc.employee.entities.Employee;
 import com.stc.employee.repositeries.EmployeeRepository;
 import com.stc.employee.requests.EmployeeRequest;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public record EmployeeService(EmployeeRepository employeeRepository) {
+@AllArgsConstructor
+public class EmployeeService {
+    private final EmployeeRepository employeeRepository;
+
     public void create(EmployeeRequest employeeRequest) {
         Employee employee = Employee.builder()
                 .name(employeeRequest.name())
