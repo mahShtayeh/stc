@@ -3,16 +3,16 @@ server:
 
 spring:
   application:
-    name: employee
+    name: employee-microservice
   datasource:
     username: 'stc'
     url: jdbc:postgresql://0.0.0.0:5432/stc
     password: 'P@ssw0rd'
-    jpa:
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.PostgreSQLDialect
-          format_sql: 'true'
+  jpa:
+    properties:
       hibernate:
-        ddl-auto: update
-      show-sql: 'true'
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
