@@ -1,5 +1,18 @@
 server:
   port: 8080
+
 spring:
   application:
     name: employee
+  datasource:
+    username: 'stc'
+    url: jdbc:postgresql://0.0.0.0:5432/stc
+    password: 'P@ssw0rd'
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: 'true'
+      hibernate:
+        ddl-auto: update
+      show-sql: 'true'
