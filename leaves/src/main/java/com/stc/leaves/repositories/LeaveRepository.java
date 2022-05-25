@@ -1,9 +1,7 @@
 package com.stc.leaves.repositories;
 
 import com.stc.leaves.entities.Leave;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface LeaveRepository extends CrudRepository<Leave, Integer> {
+public interface LeaveRepository extends JpaRepository<Leave, Integer> {
 }
