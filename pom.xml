@@ -12,6 +12,7 @@
 
   <modules>
     <module>employee</module>
+    <module>leaves</module>
   </modules>
 
   <name>stc-project</name>

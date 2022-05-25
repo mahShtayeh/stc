@@ -1,8 +1,8 @@
 server:
-  port: 8080
+  port: 8090
 spring:
   application:
-    name: employee-microservice
+    name: leaves-microservice
   datasource:
     username: 'stc'
     url: jdbc:postgresql://0.0.0.0:5432/stc
