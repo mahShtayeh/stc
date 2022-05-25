@@ -11,7 +11,7 @@
 	<artifactId>eureka-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eureka-server</name>
-	<description>eureka-server</description>
+	<description>STC Eureka server</description>
 
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
