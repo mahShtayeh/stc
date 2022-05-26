@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Setter
 @Getter
@@ -20,4 +21,7 @@ public class Employee {
     private String name;
     private String email;
     private String phone;
+
+    @OneToMany(mappedBy = "id")
+    private List<Leave> leaves;
 }

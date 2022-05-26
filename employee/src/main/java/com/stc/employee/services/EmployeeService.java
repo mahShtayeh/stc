@@ -37,4 +37,8 @@ public class EmployeeService {
     public void delete(String id) {
         employeeRepository.deleteById(id);
     }
+
+    public Employee getOne(String id) {
+        return employeeRepository.getById(id);
+    }
 }

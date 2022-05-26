@@ -26,6 +26,11 @@ public class EmployeeController {
         return employeeService.listAll();
     }
 
+    @GetMapping("/{id}")
+    public Employee getOne(@PathVariable String id) {
+        return employeeService.getOne(id);
+    }
+
     @PatchMapping("/{id}")
     public void update(@PathVariable String id, @RequestBody EmployeeRequest employeeRequest) {
         employeeService.update(id, employeeRequest);

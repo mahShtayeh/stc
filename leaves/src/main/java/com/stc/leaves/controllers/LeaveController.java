@@ -1,7 +1,6 @@
 package com.stc.leaves.controllers;
 
 import com.stc.leaves.entities.Leave;
-import com.stc.leaves.dtos.EmployeeLeaveResponse;
 import com.stc.leaves.dtos.LeaveRequest;
 import com.stc.leaves.services.LeaveService;
 import lombok.AllArgsConstructor;
@@ -35,10 +34,5 @@ public class LeaveController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         leaveService.delete(id);
-    }
-
-    @GetMapping("/fetch")
-    public List<EmployeeLeaveResponse> fetchLeaves() {
-        return leaveService.fetch();
     }
 }

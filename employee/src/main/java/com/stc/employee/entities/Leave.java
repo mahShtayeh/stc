@@ -1,9 +1,8 @@
-package com.stc.leaves.entities;
+package com.stc.employee.entities;
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @Setter
