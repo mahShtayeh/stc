@@ -18,10 +18,11 @@ public class Employee {
     @GenericGenerator(name = "employee_id_generator", strategy = "uuid2")
     @Column(name = "id")
     private String id;
+
     private String name;
     private String email;
     private String phone;
 
-    @OneToMany(mappedBy = "id")
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Leave> leaves;
 }

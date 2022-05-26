@@ -1,12 +1,14 @@
 package com.stc.employee.services;
 
+import com.stc.employee.dtos.EmployeeLeaveResponse;
 import com.stc.employee.entities.Employee;
 import com.stc.employee.repositeries.EmployeeRepository;
-import com.stc.employee.requests.EmployeeRequest;
+import com.stc.employee.dtos.EmployeeRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -40,5 +42,16 @@ public class EmployeeService {
 
     public Employee getOne(String id) {
         return employeeRepository.getById(id);
+    }
+
+    public List<EmployeeLeaveResponse> fetch() {
+        List<Employee> employees = employeeRepository.findAll();
+        List<EmployeeLeaveResponse> employeeLeaveResponseList = employees.stream()
+                .map(employee -> EmployeeLeaveResponse.builder().id(employee.getId())
+                        .name(employee.getName())
+                        .leavesNum(employee.getLeaves().size())
+                        .build()).toList();
+
+        return employeeLeaveResponseList;
     }
 }

@@ -1,4 +1,4 @@
-package com.stc.employee.requests;
+package com.stc.employee.dtos;
 
 public record EmployeeRequest(
         String name,
