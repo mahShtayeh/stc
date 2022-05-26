@@ -18,7 +18,7 @@ public class LeaveService {
 
     public void create(LeaveRequest leaveRequest) {
         Employee employee = restTemplate.getForObject(
-                "http://localhost:8080/employee/{id}",
+                "http://employee-microservice/employee/{id}",
                 Employee.class,
                 leaveRequest.employeeId()
         );
@@ -35,7 +35,7 @@ public class LeaveService {
 
     public void update(Integer id, LeaveRequest leaveRequest) {
         Employee employee = restTemplate.getForObject(
-                "http://localhost:8080/employee/{id}",
+                "http://employee-microservice/employee/{id}",
                 Employee.class,
                 leaveRequest.employeeId()
         );
